@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        html {
+            background-image: url(image.avif);
+            background-size: cover;
+            font-family: Tahoma;
+        }
+        .header{
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.1);
+            font-size: 19px;
+            font-weight: bold;
+            display: flex;
+            justify-content:space-evenly;
+        }
+        a {
+            text-decoration: none;
+            color: black
+        }
+        li{
+            margin-left: 70px;
+            padding-top: 15px;
+            list-style-type: none;
+            color: white;
+        }
+        .box {
+            display: flex;
+            flex-direction: row;   
+            display: flex;
+            align-items: center;  
+            justify-content: center;
+            
+        }
+        .box1{
+            height: 150px;
+            width: 250px;
+            margin: 15px;
+            border-radius: 10px;
+            border :2px solid rgba(0,0,0,0.1);
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            font-size: 20px;
+            background-image: url(balance.jpeg);
+            background-size:cover;
+            transition: all 0.5s ease-in-out 0s;
+        }
+        .box1:hover{
+                width: 260px;
+                height: 180px;
+            }
+        .box2{
+            height: 150px;
+            width: 250px;
+            margin: 30px;
+            border-radius: 10px;
+            border :2px solid rgba(0,0,0,0.1);
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            font-size: 20px;
+            background-image: url(liabilities.webp);
+            background-size:cover;
+            transition: width 0.5s ease-in-out, height 0.5s ease-in-out; 
+        }
+        .box2:hover{
+                width: 260px;
+                height: 180px;
+            }
+        .box3{
+            height: 150px;
+            width: 250px;
+            margin: 30px;
+            border-radius: 10px;
+            border :2px solid rgba(0,0,0,0.1);
+            display: flex;
+            background-image: url(tips.avif); 
+            background-size:cover; 
+            color:black;
+            /* align-items: center; */
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.5s ease-in-out, height 0.5s ease-in-out;
+        }
+        .box3:hover{
+                width: 260px;
+                height: 180px;
+            }
+        
+        .money{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .money1, .money2 ,.money3{
+            height: 50px ;
+            width: 150px;
+            border:2px solid black;
+            margin: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 260px ;
+            background-color:rgb(163, 105, 48);
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <ul class="header">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="https://cms.phonepe.com/en/myhelp/getting-started-phonepe/pay-your-bills-phonepe/">Bill Payemnts</a></li>
+            <li><a href="https://www.phonepe.com/investments/">investments</a></li>
+            <li><a href="https://www.phonepe.com/insurance/health-insurance/">Health Insurance</a></li>
+            <li class="userDetails"><a href="details.html">userDetails</a></li>
+            <li><a href="About_Us.html">About us</a></li>
+             
+        </ul> </div>
+        <div class="box">
+        <div class="box1"><a href="balance.html">Balance</a></div>
+        <div class="box2"> <a href="liabilities.html">...</a></div>
+        <div class="box3"><b><a href="tips.html">..</a></b></div>
+        <div class="box2" style="background-image: url(expense.webp); background-size:cover; color:white;" ><b>Month's expenses</b></div>
+        </div>
+        <div class="money">
+            <div class="money1" style="background-color: #FA8072;"><b><a href="addmoney.html">Add Money</a></b></div>
+            <div class="money2" style="background-color: #FFA07A; "><b><a href="LiabilitiesSummary.html">View Expenses</a></b></div>
+            <div class="money3" style="background-color: #E9967A; "><b><a href="viewsavings.html">View savings</a></b></div>
+        </div> 
+        <!-- <button onclick="window.print()"> print this page </button> -->
+        <footer>© 2024, All rights reserved</footer>    
+</body>
+</html>

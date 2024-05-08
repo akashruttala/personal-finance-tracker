@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance</title>
+    <style>
+        body{
+            width: 1500px ;
+            height: 400px;
+            background-color: rgba(0,0,0,0.1);
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            align-items: center;
+            border-radius: 5%;
+            font-size: 18px;  
+            padding: 120px;
+        }
+        .money {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        h2{
+            color: rgb(67, 49, 114);
+        }
+        p{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        a{
+            padding-bottom: 40px;
+            font-size: 15px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="money">
+        <p>Available balance: <span id="selectedAmount">&#x20B9;</span></p>
+    </div>
+    <div class="money">
+        <h2>How much would you like to save?</h2>
+        <input type="number" id="amountInput" placeholder="Enter amount">
+        <button onclick="saveAmount()">Save</button>
+    </div>
+    <div class="money" id="remainingAmount"></div>
+    <div class="money" id="categoryAmounts"></div>
+    <h3><b><a href="homepage.html">Go to Home page</a></b></h3>
+    <style>
+    </style>
+
+    <script>
+        // Retrieve the selected amount from localStorage
+        var selectedAmount = localStorage.getItem("selectedAmount");
+        
+        // Convert the retrieved amount to a number
+        selectedAmount = selectedAmount ? parseFloat(selectedAmount) : 0;
+        
+        // Display the selected amount
+        document.getElementById("selectedAmount").textContent += selectedAmount.toFixed(2);
+
+        // Function to calculate and display remaining amount and distribute among categories
+        function saveAmount() {
+            // Get the entered amount
+            var enteredAmount = parseFloat(document.getElementById("amountInput").value);
+            
+            // Calculate the remaining amount
+            var remainingAmount = selectedAmount - enteredAmount;
+            
+            // Display the remaining amount
+            document.getElementById("remainingAmount").textContent = "Remaining amount: ₹" + remainingAmount.toFixed(2);
+
+            // Define categories and their percentages (modify these values as needed)
+            var categories = {
+                "Food": 0.20,
+                "Clothes": 0.10,
+                "Accommodation": 0.10,
+                "EMI": 0.25,
+                "Health": 0.20,
+                "Entertainment": 0.10,
+                "Personal": 0.05
+            };
+
+            // Calculate and display amount for each category
+            var categoryAmountsHTML = "<h2>Category-wise distribution:</h2>";
+            for (var category in categories) {
+                var categoryAmount = remainingAmount * categories[category];
+                categoryAmountsHTML += "<p>" + category + ": ₹" + categoryAmount.toFixed(2) + "</p>";
+            }
+            document.getElementById("categoryAmounts").innerHTML = categoryAmountsHTML;
+        }
+    </script>
+    <button onclick="window.print()"> print this page </button>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            color: white;
+            background-image: url(page.jpg);
+            background-size: cover;
+        }
+        .container{
+            height: 900px;
+            width: 500px;
+            background-color: rgba(0,0,0,0.1);
+            align-items: center;
+            position: absolute;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            margin-top:100px;
+            padding-top: 50px;
+        }
+        .logindetails{
+            height: 500px  ;
+            width: 500px;
+            background-color: rgba(0,0,0,0.1);
+            align-items: center;
+            border-radius: 5px; 
+            text-align: center;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            margin-top:100px;
+        }
+        input , select , button{
+            height:30px ;
+            width: 250px;
+            margin:15px;
+            border:2px solid rgb(106, 150, 106);
+            border-radius: 5px;            
+        }
+        label{
+                padding-left: 20px;
+        }
+        button:hover{
+            background-color: #DC634A;
+            color: white;
+        }
+        button:active {
+            background-color: #DC634A;
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="connect.php" method="post">
+            <h2 style="padding-right: 120px;"><b>ENTER YOUR DEATILS</b></h2>
+            <label type="text"  name="firstname"> FIRST NAME :</label>
+            <br />
+            <input  class="first_name" type="text">
+            <br />
+            <label  type="text"  name="middlename"> MIDDLE NAME :</label>
+            <br />
+            <input  class="middle_name" type="text">
+            <br />
+            <label type="text"  name="lastname">LAST NAME :</label>  
+            <br />
+            <input  class="last_name" type="text">
+            <br />
+            <label class="bank">Select your Bank</label>
+            <br />
+            <select>
+                <option value="SBI">SBI</option>
+                <option value="HDFC">HDFC</option>
+                <option value="Andhra Bank">Andhra Bank</option>
+                <option value="Indian Bank">Indian Bank</option>
+                <option value="Canara bank"> Canara Bank</option>
+                <option value="Bank of India">BOI</option>
+            </select>
+            <br />
+            <label type="text"> Enter your Account number </label>  
+            <br />
+            <input   class="act-no" type="text">
+            <br /> 
+            <button >Submit </button>
+            <br />
+            <hr>
+            <label > Username</label>
+            <br />
+            <input type="text" name="username">
+            <br />
+            <label class="password">  Password :</label>
+            <br />
+            <input type="password" name="password" >
+            <br />
+            <label class="reenter">  Reenter Password</label>
+            <br />
+            <input type="password" >
+            <br />
+            <label> </label>
+            <br />
+            <button><a href="login.html">Sign up</a> </button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px
+        }
+        body {
+            /* background-image: url(image.avif); */
+            background-size: cover;
+        }
+        .header {
+            height: 100px;
+            background-color: rgb(91, 91, 242);
+            color:white;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 30px;
+        }
+        input {
+        height: 55px;
+        width: 350px ;
+        border: 2px solid rgb(136, 128, 227);
+        border-radius: 8px;
+        align-items: center;
+        margin:20px;
+        font-size: 20px;
+        padding-left: 10px;
+        }
+        .loginForm {
+            /* height: 500px;
+            width: 440px; */
+            background-color: white;           
+            border-radius:5px;
+            position: absolute;
+            border:5px solid rgba(0,0,0,0.1);
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            margin-top:100px
+        }
+        p {
+            color: green;
+            font-size: 30px;
+            text-align: center;
+            margin:25px;
+        }
+        button{
+        height: 55px;
+        width: 350px ;
+        border: 2px solid rgb(136, 128, 227);
+        
+        border-radius: 8px;
+        align-items: center;
+        margin:20px;
+        font-size: 20px;
+        padding-left: 10px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"> Personal finance tracker </div>
+    
+    <form class="loginForm">
+    <p><b>Sign in</b></p>
+    <label for="username"></label>
+    <br/>
+    <input type="text" id="username" name="username" placeholder="  Username -spm">
+    <br/>
+    <label for="password"></label>
+    <br/>
+    <input type="password" id="password" name="password" placeholder="  Password - 123 " >
+    <br/>
+    <button type="submit">Login</button>
+    <h3 style="padding-left: 20px; margin: 20px;">Don't have  account  <span ><a href="signup.html"> click here </a> </span>for  sign up </h3>
+    </form>
+    <script>
+        const loginForm = document.querySelector(".loginForm");
+        loginForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        // Replace these with your actual username and password
+         const validUsername = "spm";
+        const validPassword = "123";
+        if (username === validUsername && password === validPassword) {
+            alert("Login successful");
+            // Replace "VTOP.html" with the URL of your home page.
+            window.location.href = "homepage.html";
+        } else {
+            alert("Login failed. Please check your username and password.");
+        }
+    });
+    </script>
+</body>
+</html>

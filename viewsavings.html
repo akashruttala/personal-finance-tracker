@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Total</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #container {
+            width: 950px ;
+            height: 500px;
+            background-color: rgb(202, 227, 237);
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            align-items: center;
+            border-radius: 5%;
+            font-size: 18px;  
+            padding: 120px;
+            text-align: center;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+        h2{
+            color: rgb(123, 118, 71)
+        }
+        .details , #totalSavings{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Total Money and Total Liabilities</h2>
+        <div class="details" id="totalMoney"></div>
+        <div class="details" id="totalLiabilities"></div>
+        <hr>
+        <h2>Total Savings</h2>
+        <div id="totalSavings"></div>
+        <h3>Do you want to save your money more <a href="Finalsave.html">click here</a></h3>
+
+        <script>
+            // Retrieve total money and total liabilities from localStorage
+            var totalMoney = localStorage.getItem("selectedAmount");
+            var totalLiabilities = localStorage.getItem("totalLiabilities");
+
+            // Calculate total savings
+            var totalSavings = totalMoney - totalLiabilities;
+
+            // Display total money, total liabilities, and total savings
+            document.getElementById("totalMoney").innerText = "Total Money: ₹" + totalMoney;
+            document.getElementById("totalLiabilities").innerText = "Total Liabilities: ₹" + totalLiabilities;
+            document.getElementById("totalSavings").innerText = "Total Savings: ₹" + totalSavings;
+        </script>
+    </div>
+</body>
+</html>

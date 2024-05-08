@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance</title>
+    <style>
+        .money1 {
+            height: 250px;
+            width: 250px;
+            background-image: url(tick.jpg);
+            background-size: cover;
+            align-items: center;
+            text-align: center;
+            position: absolute;
+            font-size: 20px;
+            top:35%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        .money {
+            padding-top: 280px;
+            font-size: 20px;
+            width: 600px;
+            display: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="money1">
+        <div class="money"><b></b></div>
+        <br />
+        <b style="width: 200px;">Bank account balance fetched successful !!</b>
+        <br>
+        <b>State Bank of India - 7712</b>
+        <h4> Available Balance </h4>
+        <!-- Display the selected amount here -->
+        <h1 id="selectedAmount">&#x20B9;</h1>
+    </div>
+
+    <script>
+        // Retrieve the selected amount from localStorage
+        var selectedAmount = localStorage.getItem("selectedAmount");
+
+        // Display the selected amount
+        document.getElementById("selectedAmount").innerHTML += selectedAmount;
+    </script>
+</body>
+</html>

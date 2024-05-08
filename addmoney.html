@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Money</title>
+    <style>
+        .addmoney{
+            width: 950px ;
+            height: 400px;
+            background-color: rgba(0,0,0,0.1);
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            align-items: center;
+            border-radius: 5%;
+            font-size: 18px;  
+            padding: 120px;
+        }
+        #buton {
+            background-color: skyblue; 
+            color: white; 
+        }
+        a{
+            text-decoration: none;
+        }
+        #buton:hover{
+            background-color: rgb(48, 125, 48);
+            color: white;
+        }
+        input , button , select{
+            width: 200px;
+            height: 25px;
+            margin: 5px;
+            color:rgb(211, 24, 24);
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 7px;
+            border-color: rgb(52, 114, 172);
+        }
+        label {
+            padding-right: 70px;
+            color: rgb(105, 78, 29);
+        }
+    </style>
+</head>
+<body>
+    <div class="addmoney">
+        <label for="date"> Date</label>
+        <br>
+        <input type="date" >
+        <br>
+        <label for="act"> Account</label>
+        <br>
+        <select>
+            <option>Savings</option>
+            <option>My wallet</option>
+        </select>
+        <br>
+        <label for="source"> Source</label>
+        <br>
+        <select>
+            <option>Salary</option>
+            <option>Rent Fee</option>
+            <option>Bussiness Profit</option>
+            <option>Savings</option>
+        </select>
+        <br>
+        <label for="amt"> Amount*</label>
+        <br>
+        <select id="amt">
+            <option value="0">&#x20B9;0</option>
+            <option value="15000">&#x20B9;15000</option>
+            <option value="20000">&#x20B9;20000</option>
+            <option value="40000">&#x20B9;40000</option>
+            <option value="50000">&#x20B9;50000</option>
+            <option value="60000">&#x20B9;60000</option>
+            <option value="70000">&#x20B9;70000</option>
+            <option value="80000">&#x20B9;80000</option>
+            <option value="90000">&#x20B9;90000</option>
+        </select>
+        <br>
+        <button id="buton" onclick="storeAmount()">ADD AMOUNT</button>
+    </div>
+
+    <script>
+        function storeAmount() {
+            // Get the selected amount
+            var selectedAmount = document.querySelector("#amt").value;
+
+            // Store the selected amount in localStorage
+            localStorage.setItem("selectedAmount", selectedAmount);
+
+            // Redirect to balance.html
+            window.location.href = "successadded.html";
+        }
+    </script>
+</body>
+</html>
